@@ -1,0 +1,12 @@
+
+html::before {
+    background-image: url('https://cdn.catci.net/images/reinforced.webp') !important;
+}
+
+html::after {
+    background-image: var(--html-background);
+}
+
+body::before {
+    background-image: url('https://cdn.catci.net/images/sunrays.webp');
+}

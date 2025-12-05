@@ -1,0 +1,32 @@
+@media (max-width: 600px) {
+
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+}
+
+@media (min-width: 901px) {
+
+}
+
+@media (prefers-color-scheme: light) {
+
+}
+
+@media (forced-colors: active) {
+
+}
+
+@media (prefers-contrast: less) {
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

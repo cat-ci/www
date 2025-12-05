@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catci.net</title>
+    <meta name="description" content="My website, blog and showcase.">
+    <meta name="keywords" content="Catci, Cacti, JS, JavaScript, neocities, industrial">
+    <meta name="author" content="catci">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://cdn.catci.net" crossorigin>
+    <link rel="preconnect" href="https://catci.ocelot.zip" crossorigin>
+
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Catci" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./assets/favicon/favicon.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="theme-color" content="#333">
+
+    <meta property="og:title" content="Catci.net">
+    <meta property="og:description" content="My website, blog and showcase.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://catci.net">
+    <meta property="og:image" content="https://usercontent.aalpaca.com/catci/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Catci.net">
+    <meta name="twitter:description" content="A concise description of your page.">
+    <meta name="twitter:image" content="https://usercontent.aalpaca.com/catci/og-image.png">
+    <meta name="twitter:site" content="@_catci">
+
+    <link rel="canonical" href="https://catci.net">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "catci.net",
+  "url": "https://catci.net",
+  "description": "A personal site featuring projects, games, and a blog by Catci.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Catci",
+    "url": "https://catci.net"
+  }
+}
+</script>
+    <link rel="preload" as="image" href="https://catci.ocelot.zip/images/stain-concreted.avif" type="image/avif"
+        fetchpriority="high" />
+    <meta name="application-name" content="Catci.net">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="darkreader-lock" content="">
+    <link rel="stylesheet" href="./assets/styles/style.css" media="all" onload="this.media='all'">
+    <link rel="stylesheet" href="./fonts.css" media="all" onload="this.media='all'">
+    <!--accessibility-->
+    <noscript>
+        <style>
+            .postitnote,
+            .residue {
+                top: 60px;
+            }
+
+            [data-aspectFollow] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="./assets/styles/legacy.css">
+        <link rel="stylesheet" href="./assets/styles/no-func.css">
+        <link rel="stylesheet" href="./assets/styles/classic-backgrounds.css">
+    </noscript>
+    <script>
+        function lacksHas() {
+            try {
+                return !CSS.supports('selector(:has(*))');
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function lacksNesting() {
+            try {
+                return !CSS.supports('selector(&)');
+            } catch (e) {
+                return true;
+            }
+        }
+
+        if (lacksHas()) {
+            const script = document.createElement('script');
+            script.src = './assets/scripts/manual.js'; //manually add :has() functionality
+            document.head.appendChild(script);
+        }
+
+        if (lacksNesting()) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = './assets/styles/legacy.css'; //use non nested styling for users who dont support
+            document.head.appendChild(link);
+        }
+
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <a href="#main-nav" class="skip-to-main">
+        Skip to main content?
+    </a>
+    <!--main-page-->
+    <header>
+        <section>
+            <my-heading class="crt-text" aria-labelledby="main-heading">
+                <h1 id="main-heading">Catci.net</h1>
+                <span class="stroke">Catci.net</span>
+                <span class="stroke">Catci.net</span>
+            </my-heading>
+
+            <div class="fan">
+                <picture>
+                    <source srcset="https://catci.ocelot.zip/images/fan.avif?f=avif" type="image/avif">
+                    <source srcset="https://catci.ocelot.zip/images/fan.avif?f=webp" type="image/webp">
+                    <img src="https://catci.ocelot.zip/images/fan.avif?f=png" alt="fan"
+                        data-distsound="#fan, 0.5, 150px" width="63" height="63">
+                </picture>
+            </div>
+            <div class="leds">
+                <div class="led green"></div>
+                <div class="led red"></div>
+            </div>
+        </section>
+    </header>
+    <div class="wires">
+        <animated-wire data-basesag="30" data-amplitude="20" data-width="4" data-color="rgb(32, 2, 32)"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="45" data-amplitude="13" data-width="3" data-color="rgb(21, 21, 21)"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="48" data-amplitude="0" data-width="5" data-color="#333"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="48" data-amplitude="0" data-width="7" data-color="#333"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="100" data-amplitude="20" data-width="6" data-color="#404040" data-speed="0.7"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="60" data-amplitude="10" data-width="6" data-color="#222" data-speed="1"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="50" data-amplitude="5" data-width="5" data-color="rgb(21, 21, 21)" data-speed="0.8"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="60" data-amplitude="10" data-width="6" data-color="#222" data-speed="1"
+            style="display:block;"></animated-wire>
+        <animated-wire data-basesag="20" data-amplitude="5" data-width="5" data-color="rgb(21, 21, 21)" data-speed="0.8"
+            style="display:block;"></animated-wire>
+    </div>
+    <div class="detail-pictures">
+        <div class="header-pictures">
+            <picture class="header-grass">
+                <source srcset="https://catci.ocelot.zip/images/grass.avif?f=avif&w=585&h=150&q=40" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/grass.avif?f=webp&w=585&h=150&q=40" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/grass.avif?f=png&w=585&h=150&q=40" alt="" width="320"
+                    height="100">
+            </picture>
+            <picture class="header-ivy">
+                <source srcset="https://catci.ocelot.zip/images/ivya.avif?f=avif&w=200&h=200&q=30" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/ivya.avif?f=webp&w=200&h=200&q=30" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/ivya.avif?f=png&w=200&h=200&q=30" alt="" width="200"
+                    height="200">
+            </picture>
+            <picture class="header-overgrowth">
+                <source srcset="https://catci.ocelot.zip/images/overgrowth.avif?f=avif&w=575&h=150&q=22"
+                    type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/overgrowth.avif?f=webp&w=575&h=150&q=22"
+                    type="image/webp">
+                <img src="https://catci.ocelot.zip/images/overgrowth.avif?f=png&w=575&h=150&q=22" alt="" width="320"
+                    height="83.4833">
+            </picture>
+            <picture class="header-cobweb">
+                <source srcset="https://catci.ocelot.zip/images/cobweb.avif?f=avif&w=250&h=250&q=60" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/cobweb.avif?f=webp&w=250&h=250&q=60" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/cobweb.avif?f=png&w=250&h=250&q=60" alt="" width="250"
+                    height="250">
+            </picture>
+            <picture class="crt-grass">
+                <source srcset="https://catci.ocelot.zip/images/grass.avif?f=avif&w=585&h=150&q=40" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/grass.avif?f=webp&w=585&h=150&q=40" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/grass.avif?f=png&w=585&h=150&q=40" alt="" width="585"
+                    height="150">
+            </picture>
+            <picture class="crt-ivy">
+                <source srcset="https://catci.ocelot.zip/images/ivyb.avif?f=avif&w=250&h=250&q=30" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/ivyb.avif?f=webp&w=250&h=250&q=30" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/ivyb.avif?f=png&w=250&h=250&q=30" alt="" width="200"
+                    height="200">
+            </picture>
+            <picture class="crt-overgrowth">
+                <source srcset="https://catci.ocelot.zip/images/overgrowth.avif?f=avif&w=575&h=150&q=22"
+                    type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/overgrowth.avif?f=webp&w=575&h=150&q=22"
+                    type="image/webp">
+                <img src="https://catci.ocelot.zip/images/overgrowth.avif?f=png&w=575&h=150&q=22" alt="" width="575"
+                    height="150">
+            </picture>
+            <picture class="corner-ivy">
+                <source srcset="https://catci.ocelot.zip/images/ivyb.avif?f=avif&w=250&h=250&q=30" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/ivyb.avif?f=webp&w=250&h=250&q=30" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/ivyb.avif?f=png&w=250&h=250&q=30" alt="" width="250"
+                    height="250">
+            </picture>
+            <picture class="corner-b-ivy">
+                <source srcset="https://catci.ocelot.zip/images/ivya.avif?f=avif&w=200&h=200&q=30" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/ivya.avif?f=webp&w=200&h=200&q=30" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/ivya.avif?f=png&w=200&h=200&q=30" alt="" width="250"
+                    height="250">
+            </picture>
+        </div>
+        <div class="aside-pictures">
+            <picture class="aside-nav-stain">
+                <source srcset="https://catci.ocelot.zip/images/stain-concreted.avif" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/stain-concreted.avif?f=webp" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/stain-concreted.avif?f=png" alt="" width="237.6" height="457">
+            </picture>
+            <picture class="aside-nav-stain">
+                <source srcset="https://catci.ocelot.zip/images/stain-concretec.avif?f=avif&q=20" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/stain-concretec.avif?f=webp&q=20" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/stain-concretec.avif?f=png&q=20" alt="" width="237.6"
+                    height="457">
+            </picture>
+            <picture class="aside-status-stain">
+                <source srcset="https://catci.ocelot.zip/images/stain-concreted.avif" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/stain-concreted.avif?f=webp" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/stain-concreted.avif?f=png" alt="" width="274" height="85.6">
+            </picture>
+            <picture class="aside-status-stain">
+                <source srcset="https://catci.ocelot.zip/images/stain-concretec.avif?f=avif&q=20" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/stain-concretec.avif?f=webp&q=20" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/stain-concretec.avif?f=png&q=20" alt="" width="274"
+                    height="85.6">
+            </picture>
+            <picture class="aside-nav-vent">
+                <source srcset="https://catci.ocelot.zip/images/vent.avif" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/vent.avif?f=webp" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/vent.avif?f=png" alt="" width="40" height="40">
+            </picture>
+            <picture class="pipe-aside">
+                <source srcset="https://catci.ocelot.zip/images/pipesb.avif?f=avif" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/pipesb.avif?f=webp" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/pipesb.avif?f=png" alt="" width="128" height="160">
+            </picture>
+            <picture class="status-grass">
+                <source srcset="https://catci.ocelot.zip/images/grass.avif?f=avif&w=585&h=150&q=40" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/grass.avif?f=webp&w=585&h=150&q=40" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/grass.avif?f=png&w=585&h=150&q=40" alt="" width="250"
+                    height="64.1">
+            </picture>
+            <picture class="status-ivy">
+                <source srcset="https://catci.ocelot.zip/images/ivyb.avif?f=avif&w=250&h=250&q=30" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/ivyb.avif?f=webp&w=250&h=250&q=30" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/ivyb.avif?f=png&w=250&h=250&q=30" alt="" width="130"
+                    height="130">
+            </picture>
+            <picture class="status-bush">
+                <source srcset="https://catci.ocelot.zip/images/bush.avif?f=avif&w=150&h=120&q=30" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/bush.avif?f=webp&w=150&h=120&q=30" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/bush.avif?f=png&w=150&h=120&q=30" alt="" width="150"
+                    height="120">
+            </picture>
+            <div id="torn_edge_banner" class="torn_container torn_left torn_right">
+                <div></div>
+                <div><span class="banner_text">
+                        I dont<br>blog often.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="main-pictures">
+            <picture class="crt-stain">
+                <source srcset="https://catci.ocelot.zip/images/stain-concreted.avif" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/stain-concreted.avif?f=webp" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/stain-concreted.avif?f=png" alt="" fetchpriority="high"
+                    width="600" height="503">
+            </picture>
+            <picture class="crt-stain">
+                <source srcset="https://catci.ocelot.zip/images/stain-concretec.avif?f=avif&q=20" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/stain-concretec.avif?f=webp&q=20" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/stain-concretec.avif?f=png&q=20" alt="" fetchpriority="high"
+                    width="600" height="503">
+            </picture>
+            <picture class="mascot">
+                <source srcset="https://catci.ocelot.zip/images/mascot.avif?f=avif&h=450&q=60" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/mascot.avif?f=webp&h=450&q=60" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/mascot.avif?f=png&h=450&q=60" alt="" width="350"
+                    height="539.383">
+            </picture>
+            <!-- <div class="artist-tag mascot-info">
+                <ul>
+                    <li>
+                        Hooters Catci
+                    </li>
+                    <li>
+                        By <a href="https://x.com/EazziOnline/">EazziOnline</a>
+                    </li>
+                    <li>
+                        22/05/2025
+                    </li>
+                </ul>
+            </div> -->
+
+        </div>
+    </div>
+    <div class="cables">
+        <input type="checkbox" id="video-trigger" checked>
+        <label for="video-trigger" onclick="isChecked(() => playsound('#unplug', 0.5), () => playsound('#plugin', 0.5))"
+            aria-label="Video cable"></label>
+        <picture>
+            <source srcset="https://catci.ocelot.zip/images/video.avif" type="image/avif">
+            <source srcset="https://catci.ocelot.zip/images/video.avif?f=webp" type="image/webp">
+            <img src="https://catci.ocelot.zip/images/video.avif?f=png" alt="" class="video" width="25"
+                height="179.133">
+        </picture>
+        <input type="checkbox" id="left-trigger" checked>
+        <label for="left-trigger" onclick="isChecked(() => playsound('#unplug', 0.5), () => playsound('#plugin', 0.5))"
+            aria-label="audio left cable"></label>
+        <picture>
+            <source srcset="https://catci.ocelot.zip/images/left.avif" type="image/avif">
+            <source srcset="https://catci.ocelot.zip/images/left.avif?f=webp" type="image/webp">
+            <img src="https://catci.ocelot.zip/images/left.avif?f=png" alt="" class="left" width="25" height="179.133">
+        </picture>
+        <input type="checkbox" id="right-trigger" checked>
+        <label for="right-trigger" onclick="isChecked(() => playsound('#unplug', 0.5), () => playsound('#plugin', 0.5))"
+            aria-label="audio right cable"></label>
+        <picture>
+            <source srcset="https://catci.ocelot.zip/images/right.avif" type="image/avif">
+            <source srcset="https://catci.ocelot.zip/images/right.avif?f=webp" type="image/webp">
+            <img src="https://catci.ocelot.zip/images/right.avif?f=png" alt="" class="right" width="25"
+                height="179.133">
+        </picture>
+
+    </div>
+    <div class="accessibility-checkboxes" tabindex="0">
+        <label>
+            <input type="checkbox" data-mirror="trigger-1" data-oncheckignore="true">
+            Poke the stickynote!
+        </label>
+        <label>
+            <input type="checkbox" data-mirror="trigger-2" data-oncheckignore="true">
+            Poke it again!
+        </label>
+        <label>
+            <input type="checkbox" data-mirror="trigger-3" data-oncheckignore="true">
+            Make it fall!
+        </label>
+    </div>
+    <row-element>
+        <aside id="main-sidebar">
+            <nav id="main-nav">
+                <ul class="main-nav">
+                    <li>
+                        <h2 aria-label="Navigation links">Links (•˕ •マ.ᐟ</h2>
+                    </li>
+                    <li>
+                        <details open class="internal-nav">
+                            <summary aria-label="Internal Links">Internal</summary>
+                            <ul>
+                                <li>
+                                    <a href="./">Home</a>
+                                </li>
+                                <li>
+                                    <a href="./about.html">About me</a>
+                                </li>
+                                <li>
+                                    <a href="./Photos.html">Photo album</a>
+                                </li>
+                                <li>
+                                    <a href="./blog.html">Blog</a><span class="ascii-arrow">&lt;-- </span>
+                                </li>
+                                <li>
+                                    <a href="./oc.html">OC gallery</a>
+                                </li>
+                                <li>
+                                    <a href="./archive">Archive</a>
+                                </li>
+                                <li>
+                                    <a href="./inspiration">Inspo</a>
+                                </li>
+                                <li>
+                                    <a href="./projects.html">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:a@catci.net">E-mail</a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details open class="external-nav">
+                            <summary aria-label="External Links">External</summary>
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/cat-ci">Github</a>
+                                </li>
+                                <li>
+                                    <a href="https://neocities.org/site/catci">Neocities</a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/_catci/">Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="https://bsky.app/profile/catci.net">Bluesky</a>
+                                </li>
+                                <li>
+                                    <a href="https://catci.atabook.org/">Guestbook</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.last.fm/user/cat-ci">Last.fm</a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+                <div class="line"></div>
+            </nav>
+            <div class="status-container" id="status">
+                <h2>
+                    Im
+                </h2>
+                <div class="status-screen loading">
+                    <span class="status" data-jsinfo="status">Loading...</span>
+                    <span class="status-stroke" data-jsinfo="status">Loading...</span>
+                </div>
+                <div class="grill"></div>
+            </div>
+            <div class="hitcounter">
+                <div>
+                    <h2>Hitcounter</h2>
+                    <div class="hitcounter_display">
+                        <ul class="names">
+                            <li>All:</li>
+                            <li>Unique:</li>
+                            <li>Live:</li>
+                        </ul>
+                        <ul class="numbers">
+                            <li>
+                                <span class="hc__pre">00000000</span><span data-cc="all"></span>
+                            </li>
+                            <li>
+                                <span class="hc__pre">00000000</span><span data-cc="uniq"></span>
+                            </li>
+                            <li>
+                                <span class="hc__pre">00000000</span><span data-cc="live"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="hc__warn">
+                        ⚠︎ Please do not poke the fan!
+                    </div>
+                    <div class="fan">
+                        <picture>
+                            <source srcset="https://catci.ocelot.zip/images/fan.avif" type="image/avif">
+                            <source srcset="https://catci.ocelot.zip/images/fan.avif?f=webp" type="image/webp">
+                            <img src="https://catci.ocelot.zip/images/fan.avif?f=png" alt="fan"
+                                data-distsound="#fan, 0.05, 150px">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main id="main">
+            <row-element>
+                <div class="crt" id="crt">
+                    <div class="screen-container">
+                        <div class="improv">
+                            <input type="checkbox" id="trigger-1" name="trigger-1">
+                            <label for="trigger-1">Enable feature 1</label>
+
+                            <input type="checkbox" id="trigger-2" name="trigger-2">
+                            <label for="trigger-2">Enable feature 2</label>
+
+                            <input type="checkbox" id="trigger-3" name="trigger-3">
+                            <label for="trigger-3">Enable feature 3</label>
+                            <picture>
+                                <source srcset="https://catci.ocelot.zip/images/residue.avif" type="image/avif">
+                                <source srcset="https://catci.ocelot.zip/images/residue.avif?f=webp" type="image/webp">
+                                <img src="https://catci.ocelot.zip/images/residue.avif?f=png" alt="" class="residue"
+                                    width="150" height="175">
+                            </picture>
+                            <picture>
+                                <source srcset="https://catci.ocelot.zip/images/catci.avif?f=avif&w=150"
+                                    type="image/avif">
+                                <source srcset="https://catci.ocelot.zip/images/catci.avif?f=webp&w=150"
+                                    type="image/webp">
+                                <img src="https://catci.ocelot.zip/images/catci.avif?f=png&w=150" alt=""
+                                    class="postitnote" id="postItNote" width="150" height="175">
+                            </picture>
+                        </div>
+                        <div class="screen-indent">
+
+                            <div class="crt-container">
+                                <div class="screen scanlines">
+                                    <div class="contents">
+                                        <div class="static"></div>
+                                        <h2>WELCOME TO CATCI.NET!</h2>
+                                        <noscript>
+                                            <p>
+                                                /ᐠ - ˕ -マ Looks like JavaScript is disabled please enable javascript for
+                                                the best experience
+                                            </p>
+                                        </noscript>
+                                        <img src="./assets/cat.svg" alt="" class="cat-ascii" width="205" height="180">
+                                        <ul>
+                                            <li>
+
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                            </li>
+                                            <li>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div aria-hidden="true" class="label">
+                            <div>A0000001</div>
+                        </div>
+                        <div></div>
+                        <div class="door"></div>
+                        <div class="power-options">
+                            <input type="checkbox" id="power" checked>
+                            <label for="power" class="crt-button" onclick="playsound('#button', 0.3)">power</label>
+                            <span class="indicator" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </row-element>
+            <row-element>
+                <div class="blog">
+                    <picture class="paper-tape">
+                        <source srcset="https://catci.ocelot.zip/images/tape.avif?h=50" type="image/avif">
+                        <source srcset="https://catci.ocelot.zip/images/tape.avif?f=webp" type="image/webp">
+                        <img src="https://catci.ocelot.zip/images/tape.avif?f=png" alt="" width="127.914"
+                            height="46.4064">
+                    </picture>
+                    <picture class="paper-blog">
+                        <source srcset="https://catci.ocelot.zip/images/paperb.avif" type="image/avif">
+                        <source srcset="https://catci.ocelot.zip/images/paperb.avif?f=webp" type="image/webp">
+                        <img src="https://catci.ocelot.zip/images/paperb.avif?f=png" alt="" width="136" height="361">
+                    </picture>
+                    <picture class="rss-highlight">
+                        <source srcset="https://catci.ocelot.zip/images/highlight.avif" type="image/avif">
+                        <source srcset="https://catci.ocelot.zip/images/highlight.avif?f=webp" type="image/webp">
+                        <img src="https://catci.ocelot.zip/images/highlight.avif?f=png" alt="">
+                    </picture>
+                    <div class="blog-header">
+                        <a href="./blog.html">
+                            <h3>Blog</h3>
+                        </a>
+                        <a href="./blog.rss" aria-label="Subscribe to the rss feed"><img src="./assets/rss-solid.svg"
+                                alt="rss"></a>
+                    </div>
+                    <div data-jsinfo="blogloader">
+                        <div class="blog-post">
+                            <a href="./blog.html?post=1">
+                                <h4>Hello world!</h4>
+                                <span>--</span>
+                                <span class="time">20th may 2025</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="cable"></div>
+                    <div class="load-stats">
+                        <ul class="lcd-screen">
+                            <li class="load-stat initial-load">
+                                First Load:
+                                <span data-load="first">Calculating...</span>
+                                ms
+                            </li>
+                            <li class="load-stat usable-load">
+                                Ready to use:
+                                <span data-load="usable">Calculating...</span>
+                                ms
+                            </li>
+                            <li class="load-stat final-load">
+                                Full Load:
+                                <span data-load="final">Calculating...</span>
+                                ms
+                            </li>
+                            <li class="load-stat speed-load">
+                                Load Speed:
+                                <span data-load="speed">Calculating...</span>
+                                Mbps
+                            </li>
+                        </ul>
+                        <div class="details">
+                            <picture class="high-voltage-sign">
+                                <source srcset="https://catci.ocelot.zip/images/voltage-sign.avif?f=avif"
+                                    type="image/avif">
+                                <source srcset="https://catci.ocelot.zip/images/voltage-sign.avif?f=webp"
+                                    type="image/webp">
+                                <img src="https://catci.ocelot.zip/images/voltage-sign.avif?f=png" alt="voltage sign"
+                                    width="20" height="20">
+                            </picture>
+                            <div class="bar-container">
+                                <div class="bars"></div>
+                            </div>
+                            <div class="arrows">
+                                <span class="down" data-symbol="🡳">
+                                    🡳
+                                </span>
+                                <span class="up active" data-symbol="🡱">
+                                    🡱
+                                </span>
+                            </div>
+                        </div>
+                        <script>
+                            function displayPerformanceMetrics() {
+                                const navEntries = performance.getEntriesByType('navigation');
+                                const nav = navEntries && navEntries[0];
+
+                                let firstLoad = 0;
+                                let usableLoad = 0;
+                                let finalLoad = 0;
+
+                                if (nav) {
+                                    firstLoad = nav.responseStart - nav.startTime;
+                                    usableLoad = nav.domContentLoadedEventEnd - nav.startTime;
+                                    finalLoad = nav.loadEventEnd - nav.startTime;
+                                } else {
+                                    const t = performance.timing;
+                                    firstLoad = t.responseStart - t.navigationStart;
+                                    usableLoad = t.domContentLoadedEventEnd - t.navigationStart;
+                                    finalLoad = t.loadEventEnd - t.navigationStart;
+                                }
+
+                                const resources = performance.getEntriesByType('resource');
+                                let totalBytes = 0;
+                                let totalTime = 0;
+
+                                for (const res of resources) {
+                                    const duration = res.responseEnd - res.startTime;
+                                    if (res.transferSize > 0 && duration > 0) {
+                                        totalBytes += res.transferSize;
+                                        totalTime += duration;
+                                    }
+                                }
+
+                                let speedMbps = 0;
+                                if (totalBytes > 0 && totalTime > 0) {
+                                    speedMbps = (totalBytes * 8) / totalTime / 1000;
+                                }
+
+                                document.querySelector('[data-load="first"]').textContent =
+                                    firstLoad.toFixed(2);
+                                document.querySelector('[data-load="usable"]').textContent =
+                                    usableLoad.toFixed(2);
+                                document.querySelector('[data-load="final"]').textContent =
+                                    finalLoad.toFixed(2);
+                                document.querySelector('[data-load="speed"]').textContent =
+                                    speedMbps > 0 ? speedMbps.toFixed(2) : 'N/A';
+                            }
+
+                            window.addEventListener('load', () => {
+                                if ('requestIdleCallback' in window) {
+                                    requestIdleCallback(displayPerformanceMetrics, { timeout: 1000 });
+                                } else {
+                                    setTimeout(displayPerformanceMetrics, 0);
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+
+            </row-element>
+            <row-element class="projects">
+                <div class="project-bar projects-container">
+                    <div class="lcd-screen">
+                        <a href="https://ocelot.zip">
+                            <div class="ocelot">
+                                <h3>Ocelot.zip</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </row-element>
+            <picture class="matrix-cover">
+                <source srcset="https://catci.ocelot.zip/images/matrix.avif?f=avif" type="image/avif">
+                <source srcset="https://catci.ocelot.zip/images/matrix.avif?f=webp" type="image/webp">
+                <img src="https://catci.ocelot.zip/images/matrix.avif?f=png" alt="" width="300" height="300">
+            </picture>
+
+            <row-element class="catwalks">
+                <div class="details"></div>
+            </row-element>
+        </main>
+    </row-element>
+    <!--svgs-->
+    <svg height="0" width="0" viewBox="0 0 93.88 76.19" aria-hidden="true">
+        <clipPath id="crtPath" clipPathUnits="objectBoundingBox" transform="scale(0.01065 0.01312)">
+            <path d="M47.78,0.5
+        c8,0,36.5,0.5,41.81,2.5
+        c4,2,3.79,20.28,3.79,35.69
+        c0,15-.08,29.79-3.53,32.24
+        S62.3,75.69,47.78,75.69
+        c-13,0-38.89-0.86-43-3.27
+        S.57,54.42.57,38.73
+        S.31,6.56,4.5,3.38
+        S38.77.5,47.78.5Z
+        "></path>
+        </clipPath>
+
+    </svg>
+    <svg height="0" width="0" viewBox="0 0 93.88 76.19" aria-hidden="true">
+        <clipPath id="curvePath" clipPathUnits="objectBoundingBox" transform="scale(0.01065 0.01312)">
+            <path d="M47.78,0.5
+                c8,0,36.5,0.5,41.81,2.5
+                c4,2,3.79,20.28,3.79,35.69
+                c0,15-.08,29.79-3.53,32.24
+                S62.3,75.69,47.78,75.69
+                c-13,0-38.89-0.86-43-3.27
+                S.57,54.42.57,38.73
+                S.31,6.56,4.5,3.38
+                S38.77.5,47.78.5Z
+                "></path>
+        </clipPath>
+
+    </svg>
+    <!--audios-->
+    <audio id="button">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="plugin">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="unplug">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="fan" loop>
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="industrial" loop>
+        Your browser does not support the audio element.
+    </audio>
+    <!--audio-templates-->
+    <template id="button-sources">
+        <source src="https://catci.ocelot.zip/audio/button.ogg" type="audio/ogg">
+        <source src="https://catci.ocelot.zip/audio/button.ogg?f=mp3" type="audio/mpeg">
+    </template>
+    <template id="plugin-sources">
+        <source src="https://catci.ocelot.zip/audio/plugin.ogg" type="audio/ogg">
+        <source src="https://catci.ocelot.zip/audio/plugin.ogg?f=mp3" type="audio/mpeg">
+    </template>
+    <template id="unplug-sources">
+        <source src="https://catci.ocelot.zip/audio/unplug.ogg" type="audio/ogg">
+        <source src="https://catci.ocelot.zip/audio/unplug.ogg?f=mp3" type="audio/mpeg">
+    </template>
+    <template id="fan-sources">
+        <source src="https://catci.ocelot.zip/audio/fan.ogg" type="audio/ogg">
+        <source src="https://catci.ocelot.zip/audio/fan.ogg?f=mp3" type="audio/mpeg">
+    </template>
+    <template id="industrial-sources">
+        <source src="https://catci.ocelot.zip/audio/industrial.ogg" type="audio/ogg">
+        <source src="https://catci.ocelot.zip/audio/industrial.ogg?f=mp3" type="audio/mpeg">
+    </template>
+    <!--scripts-->
+    <script src="./assets/scripts/main.js" defer></script>
+</body>
+
+
+</html>

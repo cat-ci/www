@@ -1,0 +1,31 @@
+@supports not (selector(:has(*))) {
+    .screen.scanlines:before {
+        background: rgba(0, 0, 0, .25);
+        animation: scan-moving 6s linear infinite;
+    }
+
+    .screen.scanlines:after {
+        background: linear-gradient(to bottom,
+                transparent 50%,
+                rgba(0, 0, 0, .25) 51%);
+        background-size: 100% 0.4rem;
+        animation: scan-crt 1s steps(60) infinite;
+    }
+
+    .screen>.contents {
+        animation: crt-power-on 1s forwards linear;
+    }
+
+    #torn_edge_banner {
+        display: block;
+    }
+
+    .crt-button {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .static{
+        display: none !important;
+        pointer-events: none !important;
+    }
+}

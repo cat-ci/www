@@ -1,0 +1,201 @@
+:root {
+    --negative-background: url(https://catci.ocelot.zip/images/reinforced.avif?f=avif&q=20);
+    --negative-background-brightness: .2;
+    --html-background: url(https://catci.ocelot.zip/images/gratea.avif?f=avif&q=10);
+    --rails-image: url(https://catci.ocelot.zip/images/wire-strip.avif?f=avif&q=60);
+}
+body {
+    --torn-background-color: url(https://catci.ocelot.zip/images/papera.avif?w=92&h=46&f=avif);
+}
+html::before {
+    background-image: var(--negative-background);
+    filter: brightness(var(--negative-background-brightness));
+}
+
+html::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    background-image: var(--html-background);
+    background-size: 20vw;
+    background-position: -20px;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    filter: brightness(0.3)
+}
+
+main::before {
+    background: var(--rails-image) 0 0 / 100% 10%;
+}
+
+main::after {
+    background: var(--rails-image) 0 0 / 100% 10%;
+}
+
+aside nav summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    margin-bottom: 3px;
+    font-size: 1.05rem
+}
+
+aside nav summary::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background: url(../closed.svg) no-repeat center center;
+    background-size: 100% 100%;
+    filter: brightness(1);
+}
+aside nav details[open]>summary::after {
+    background-image: url(../open.svg);
+}
+
+aside .status-container .status-screen span:last-child {
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+    color: transparent;
+    -webkit-text-stroke: 8px #555
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1
+    }
+
+    10% {
+        opacity: .9
+    }
+
+    20% {
+        opacity: .95
+    }
+
+    30% {
+        opacity: .85
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: .92
+    }
+
+    60% {
+        opacity: .98
+    }
+
+    70% {
+        opacity: .87
+    }
+
+    80% {
+        opacity: 1
+    }
+
+    90% {
+        opacity: .93
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #4e5540, 0 0 1px #95a76900 0 0 0 #95a769
+    }
+
+    100% {
+        text-shadow: 0 0 10px #4e5540, 0 0 5px #95a76900 0 0 10px #95a769
+    }
+}
+
+#torn_edge_banner {
+    display: none
+}
+
+body:has(.internal-nav:open) #torn_edge_banner {
+    display: block
+}
+
+@keyframes scan-moving {
+    0% {
+        transform: translate3d(0, 100vh, 0)
+    }
+}
+
+@keyframes scan-crt {
+    0% {
+        background-position: 0 50%
+    }
+}
+
+.crt .improv input#trigger-2:checked+label[for="trigger-2"] {
+    opacity: .2;
+    top: -500px;
+    pointer-events: none
+}
+
+.crt .improv input#trigger-2:checked~input#trigger-3+label[for="trigger-3"] {
+    opacity: 1;
+    pointer-events: auto;
+    left: 45px
+}
+
+#trigger-3:checked~picture:last-of-type .postitnote {
+    animation: postit-fall 1s forwards;
+    pointer-events: none
+}
+
+.static {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    margin-left: -20px;
+    margin-top: -20px;
+    background: #000;
+    overflow: hidden;
+    transition: opacity .3s;
+    opacity: 1;
+    pointer-events: all
+}
+
+.blog-post h4 {
+    display: inline
+}
+
+.blog {
+    font-family: "WW pencil"
+}
+
+.blog * {
+    text-decoration: none;
+    color: #383428
+}
+
+.blog h3 {
+    font-size: 1.4rem
+}

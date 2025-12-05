@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'WW pencil';
+    src: url('./assets/fonts/subset-pencil.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* @font-face {
+    font-family: 'MS-UI-Gothic';
+    src: url('./assets/fonts/subset-MS-UIGothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: 'sevensegment';
+    src: url('./assets/fonts/subset-seven-segment.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'pixel';
+    src: url('./assets/fonts/subset-pixel.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* @font-face {
+    font-family: 'aperture';
+    src: url('./assets/fonts/subset-aperture.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: 'Libre Barcode';
+    src: url('./assets/fonts/subset-barcode.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
