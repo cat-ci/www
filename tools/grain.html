@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Film Grain Effect Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 15px;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    canvas {
+      max-width: 90vw;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      background: #000;
+    }
+
+    button {
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Film Grain Image Tool</h1>
+  <input type="file" id="upload" accept="image/*" />
+  <div class="controls">
+    <label>
+      Grain Amount
+      <input type="range" id="amount" min="0" max="1" step="0.01" value="0.2" />
+    </label>
+    <label>
+      Grain Intensity
+      <input type="range" id="intensity" min="0" max="255" step="1" value="40" />
+    </label>
+  </div>
+
+  <canvas id="canvas"></canvas>
+  <button id="downloadBtn">Download Result</button>
+
+  <script>
+    const upload = document.getElementById('upload');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const amountSlider = document.getElementById('amount');
+    const intensitySlider = document.getElementById('intensity');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    let image = new Image();
+
+    upload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        image.onload = () => {
+          canvas.width = image.width;
+          canvas.height = image.height;
+          drawImageWithGrain();
+        };
+        image.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    amountSlider.addEventListener('input', drawImageWithGrain);
+    intensitySlider.addEventListener('input', drawImageWithGrain);
+
+    function drawImageWithGrain() {
+      if (!image.src) return;
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      const amount = parseFloat(amountSlider.value);
+      const intensity = parseInt(intensitySlider.value);
+
+      const numPixels = data.length / 4;
+      const grainPixels = Math.floor(numPixels * amount);
+
+      for (let i = 0; i < grainPixels; i++) {
+        const index = Math.floor(Math.random() * numPixels) * 4;
+        const noise = (Math.random() - 0.5) * intensity;
+        data[index] += noise;
+        data[index + 1] += noise;
+        data[index + 2] += noise;
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    downloadBtn.addEventListener('click', () => {
+      if (!image.src) return;
+      const link = document.createElement('a');
+      link.download = 'film_grain_image.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  </script>
+</body>
+</html>
